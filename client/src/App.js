@@ -6,7 +6,7 @@ export default ()=> {
     return <div className= "container"> 
         <h1>create Post</h1>
         <PostCreate/>
-        <hr>
+        <hr/>
         <h1> Posts </h1>
         <PostList/>
     </div>

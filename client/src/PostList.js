@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+
 
 export default ()=> {
     const [posts, setPosts] = useState({})
 
     const getPosts = async ()=>{
-        res = await axios.get('http://localhost:4000')
+        const res = await axios.get('http://localhost:4000/posts')
         setPosts(res.data)
     }
     useEffect(()=>{
-        getPosts
+        getPosts()
     },[])
 
-    const renderPosts =  object.values.map(post => {
+    const renderPosts =  Object.values(posts).map(post => {
         return(
             <div className="card" key={post.id} style= {{width: '30%', marginBottom: '20px'}}>
             <div className="card-body"> 
