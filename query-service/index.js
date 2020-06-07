@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
-
+const postsNComments = {} // {postId:{postId, postTitle, comments: [{id, comment, postid}]}}
 app.post('/events',(req, res)=> {
   const eventType = req.body.event.type 
   console.log(eventType, 'eventType')
