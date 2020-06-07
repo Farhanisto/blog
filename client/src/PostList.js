@@ -14,7 +14,7 @@ export default ()=> {
     }
     useEffect(()=>{
         getPosts();
-    },[])
+    },[posts])
 
     const renderPosts =  Object.values(posts).map(post => {
         return(

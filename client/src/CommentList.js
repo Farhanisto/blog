@@ -9,7 +9,7 @@ export default ({postId}) =>{
     }
     useEffect(()=> {
         commentsByPostId();
-    }, []
+    }, [comments]
     )
   
     const renderCommentsByPostId = comments.map(comment=> {
