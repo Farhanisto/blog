@@ -8,7 +8,7 @@ app.use(cors())
 const postsNComments = {} // {postId:{postId, postTitle, comments: [{id, comment, postids}]}}
 app.post('/events',(req, res)=> {
   const {type, data} = req.body.event
-  console.log(eventType, 'eventType')
+  console.log(type, 'eventType')
   if(type === 'postCreatedEvent'){
       const {id, title} = data
       postsNComments[id] = {id, title, comments: []}
@@ -21,7 +21,8 @@ app.post('/events',(req, res)=> {
 })
 
 app.get('/posts', (req, res)=>{
-    res.status({"status": 200}).send(postsNComments)
+    // res.send(postsNComments)
+    res.status(200).send(postsNComments)
 })
 
 app.listen(4002, ()=> {
