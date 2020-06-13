@@ -15,9 +15,19 @@ export default ({comments}) =>{
     // )
   
     const renderCommentsByPostId = comments.map(comment=> {
+        let content
+        if(comment.status === 'pending'){
+            content = 'awaiting approval' 
+        }
+        if(comment.status === 'approved'){
+            content = comment.content 
+        }
+        if(comment.status === 'rejected'){
+            content = 'rejected'
+        }
         console.log(comment, 'key')
         return(      
-              <li key={comment.id}>{comment.content}</li>
+              <li key={comment.id}>{content}</li>
         )
     })
     return (
