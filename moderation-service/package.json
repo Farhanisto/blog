@@ -2,7 +2,7 @@
   "name": "moderation-service",
   "version": "1.0.0",
   "main": "index.js",
-  "scrips": {
+  "scripts": {
     "start": "nodemon index.js"
   },
   "license": "MIT",
