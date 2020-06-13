@@ -37,7 +37,7 @@ app.post('/posts/:id/comments', async (req, res)=> {
     res.status(201).send(comments)
 })
 
-app.post('/events', (req, res) => {
+app.post('/events', async (req, res) => {
     const {type, data} = req.body.event
     console.log(`recieved event of type ${type}`)
     if (type === 'commentModeratedEvent') {
