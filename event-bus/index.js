@@ -4,9 +4,11 @@ const bodyParser = require('body-parser')
 
 const app = express()
 app.use(bodyParser.json())
+const events = []
 
 app.post('/events',async (req, res)=>{
     const event = req.body
+    events.push(event)
     await axios.post('http://localhost:4000/events', {
         event
     })
@@ -20,6 +22,11 @@ app.post('/events',async (req, res)=>{
         event
     })
     res.send({status: '0k'})
+})
+
+app.get('events', (req, res)=> {
+    res.send(events)
+    res.status('ok')
 })
 
 app.listen(4005, ()=>{
