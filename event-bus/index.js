@@ -17,14 +17,14 @@ app.post('/events',async (req, res)=>{
     })
     await axios.post('http://localhost:4002/events', {
         event
-    }).catch (e  => {console.log(e)})
+    })
     await axios.post('http://localhost:4003/events', {
         event
     })
     res.send({status: '0k'})
 })
 
-app.get('events', (req, res)=> {
+app.get('/events', (req, res)=> {
     res.send(events)
     res.status('ok')
 })
