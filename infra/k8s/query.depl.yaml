@@ -1,32 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: posts-depl
+  name: query-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: posts
+      app: query
   template:
     metadata:
       labels:
-        app: posts
+        app: query
     spec:
       containers:
-        - name: posts
-          image: farhanisto/posts
-
+        - name: query
+          image: farhanisto/query
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: post-cluster-ip
+  name: query-srv
 spec:
   type: ClusterIP
   selector:
-    app: posts
+    app: query
   ports:
-    - name: posts-cluster-ip
-      protocol: TCP
-      port: 4000
-      targetPort: 4000
+   - name: query-cluster-ip
+     protocol: TCP
+     port: 4002
+     targetPort: 4002
