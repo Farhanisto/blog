@@ -15,3 +15,16 @@ spec:
       containers:
         - name: moderation
           image: farhanisto/moderation
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: moderation-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: moderation
+  ports:
+    - name: moderation-port
+      port: 4003
+      targetPort: 4003
