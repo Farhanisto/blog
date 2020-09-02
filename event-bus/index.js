@@ -12,9 +12,9 @@ app.post('/events',async (req, res)=>{
     await axios.post('http://post-cluster-ip:4000/events', {
         event
     })
-    // await axios.post('http://localhost:4001/events', {
-    //     event
-    // })
+    await axios.post('http://comments-service:4001/events', {
+        event
+    })
     await axios.post('http://query-srv:4002/events', {
         event
     })
