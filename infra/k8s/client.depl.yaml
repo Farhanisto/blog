@@ -27,5 +27,5 @@ spec:
     app: client
   ports:
     - name: client-cl-ip
-      port: 4001
-      targetPort: 4001
+      port: 3000
+      targetPort: 3000
