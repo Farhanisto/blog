@@ -11,5 +11,5 @@ spec:
         paths:
           - path: /posts
             backend:
-              serviceName: posts-cluster-ip
+              serviceName: post-cluster-ip
               servicePort: 4000
